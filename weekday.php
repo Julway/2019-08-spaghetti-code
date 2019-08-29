@@ -45,9 +45,9 @@ if($m>=11) {
     $y = substr($year-1, 2, 2);
 }
 
-$w = ($day + intval (2.6 * $m - 0.2) + $y  + intval ($y/4) + intval ($c/4) - 2*$c ) % 7;
+$weekdayNumber = ($day + intval (2.6 * $m - 0.2) + $y  + intval ($y/4) + intval ($c/4) - 2*$c ) % 7;
 
-$weekday = getWeekdayName($w);
+$weekday = getWeekdayName($weekdayNumber);
 
 echo "Eingabe: {$day}.{$month}.{$year}\n";
 echo strftime("Berechnung PHP: Wochentag='%A'\n",strtotime("$year-$month-$day"));

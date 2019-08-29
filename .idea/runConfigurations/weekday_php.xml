@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="weekday.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" nameIsGenerated="true" path="$PROJECT_DIR$/weekday.php" scriptParameters="1 2 2018">
+  <configuration default="false" name="weekday.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" nameIsGenerated="true" path="$PROJECT_DIR$/weekday.php" scriptParameters="1 2 2018 --debug">
     <method v="2" />
   </configuration>
 </component>
