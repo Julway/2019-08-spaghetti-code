@@ -58,11 +58,14 @@ function printDebugOutput(int $m, $y, $c): void
     }
 }
 
-function main(int $argc, array $argv): void
+
+/**
+ * @param int $argc
+ * @param array $argv
+ * @return array
+ */
+function handleCommandLine(int $argc, array $argv): array
 {
-
-    setlocale(LC_TIME, 'de_AT.utf-8');
-
     $day = $argv[1];
     $month = $argv[2];
     $year = $argv[3]; /* muss vierstellig sein */
@@ -71,9 +74,19 @@ function main(int $argc, array $argv): void
         echo "Wrong number of arguments.";
         exit(1);
     }
+    return array($day, $month, $year);
+}
+
+function main(int $argc, array $argv): void
+{
+
+    setlocale(LC_TIME, 'de_AT.utf-8');
+
+    list($day, $month, $year) = handleCommandLine($argc, $argv);
 
     $m = (($month - 2 - 1) + 12) % 12 + 1; // this is because of the modulo
     $c = substr($year, 0, 2);
+
     if ($m >= 11) {
         $c = substr($year - 1, 0, 2);
     }
