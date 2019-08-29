@@ -54,5 +54,5 @@ echo strftime("Berechnung PHP: Wochentag='%A'\n",strtotime("$year-$month-$day"))
 echo "Berechnung Algorithmus: Wochentag='{$weekday}'\n";
 if($argc>4 && ( $argv[4]=='-d' || $argv[4]=='--debug')) {
     echo "DEBUG: m={$m} y={$y} c={$c}\n";
-
+}
 
