@@ -26,10 +26,7 @@ $y = substr($year, 2, 2);
 if($m>=11) {
     $y = substr($year-1, 2, 2);
 }
-// FUNKTIONIERT NICHT TODO TODO
-//function calculateMonatsTag() {
-//    return (($m) - 1) + 12 % 12;
-//}
+
 $w = ($d + intval (2.6 * $m - 0.2) + $y  + intval ($y/4) + intval ($c/4) - 2*$c ) % 7;
 if($w == 1) {
     $x = "Montag";
