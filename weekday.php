@@ -6,6 +6,26 @@
 
 setlocale(LC_TIME, 'de_AT.utf-8');
 
+/**
+ * @param int $w
+ * @return mixed
+ */
+function getWeekdayName(int $w)
+{
+    $weekdays = [
+        "Sonntag",
+        "Montag",
+        "Dienstag",
+        "Mitwoch",
+        "Donnerstag",
+        "Freitag",
+        "Samstag",
+    ];
+
+    $weekday = $weekdays[$w];
+    return $weekday;
+}
+
 $day = $argv[1];
 $month = $argv[2];
 $year = $argv[3]; /* muss vierstellig sein */
@@ -27,16 +47,8 @@ if($m>=11) {
 
 $w = ($day + intval (2.6 * $m - 0.2) + $y  + intval ($y/4) + intval ($c/4) - 2*$c ) % 7;
 
-$weekdays=[
-    "Sonntag",
-    "Montag",
-    "Dienstag",
-    "Mitwoch",
-    "Donnerstag",
-    "Freitag",
-    "Samstag",
-];
-$weekday=$weekdays[$w];
+$weekday = getWeekdayName($w);
+
 echo "Eingabe: {$day}.{$month}.{$year}\n";
 echo strftime("Berechnung PHP: Wochentag='%A'\n",strtotime("$year-$month-$day"));
 echo "Berechnung Algorithmus: Wochentag='{$weekday}'\n";
